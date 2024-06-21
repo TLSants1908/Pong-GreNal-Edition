@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* fundo preto padrão */
+            font-family: Arial, sans-serif;
+        }
+        #menu {
+            padding-left: 800px; /* ajuste o padding-left conforme necessário */
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* fundo branco com transparência */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* sombra suave */
+            max-width: 80%; /* largura máxima da caixa */
+            transition: opacity 0.3s ease; /* transição suave da opacidade */
+            opacity: 1; /* menu inicialmente visível */
+        }
+        #pong {
+            display: none; /* esconder o canvas inicialmente */
+            margin: 0 auto;
+            background-color: #008000; /* cor de fundo verde para as bordas do jogo */
+        }
+        .menu h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .menu h2 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .menu h3 {
+            font-size: 18px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .menu button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        .start-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu" id="menu">
+        <h1>Pong</h1>
+        <h2>GreNal Edition</h2>
+        <div>
+            <h3>Escolha seu time</h3>
+            <button id="chooseInter">Inter</button>
+            <button id="chooseGremio">Grêmio</button>
+        </div>
+        <div>
+            <h3>Escolha a dificuldade</h3>
+            <button id="easy">Fácil</button>
+            <button id="medium">Médio</button>
+            <button id="hard">Difícil</button>
+        </div>
+        <button id="startGame" class="start-button">Iniciar Jogo</button>
+    </div>
+    <canvas id="pong" width="800" height="400"></canvas>
+    <script src="pong.js"></script>
+    <script>
+        document.getElementById('startGame').addEventListener('click', function() {
+            // Esconder o menu e mostrar o canvas ao iniciar o jogo
+            document.getElementById('menu').style.opacity = '0';
+            document.getElementById('pong').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
